@@ -1,0 +1,31 @@
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
+.check-list__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #fff;
+}
+
+.check-list__icon circle {
+  fill: var(--color-orange);
+}
+
+.section--navy .check-list li,
+.check-list--on-navy li {
+  color: rgba(255, 255, 255, 0.88);
+}

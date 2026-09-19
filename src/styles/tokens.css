@@ -1,0 +1,57 @@
+:root {
+  /* Color */
+  --color-navy: #0d1b42;
+  --color-navy-700: #14275a;
+  --color-navy-600: #1b3170;
+  --color-navy-tint: #eef1f8;
+  --color-orange: #ef7d1f;
+  --color-orange-600: #d96b12;
+  --color-orange-tint: #fdf0e3;
+  --color-background: #f5f6f9;
+  --color-surface: #ffffff;
+  --color-text: #101a33;
+  --color-muted: #5c6578;
+  --color-muted-light: #8992a3;
+  --color-border: #e3e6ee;
+  --color-border-dark: rgba(255, 255, 255, 0.14);
+  --color-success: #1e8a5f;
+  --color-error: #c53030;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fs-hero: clamp(2.1rem, 1.55rem + 2.4vw, 3.4rem);
+  --fs-h1: clamp(1.9rem, 1.5rem + 1.7vw, 2.75rem);
+  --fs-h2: clamp(1.55rem, 1.3rem + 1.1vw, 2.1rem);
+  --fs-h3: 1.25rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.8rem;
+  --lh-tight: 1.15;
+  --lh-heading: 1.25;
+  --lh-body: 1.65;
+
+  /* Spacing / layout */
+  --container-width: 1240px;
+  --container-padding: 24px;
+  --section-padding: 96px;
+  --section-padding-mobile: 56px;
+  --gap-sm: 12px;
+  --gap-md: 24px;
+  --gap-lg: 40px;
+
+  /* Radius */
+  --radius-card: 14px;
+  --radius-button: 8px;
+  --radius-badge: 999px;
+  --radius-input: 8px;
+
+  /* Shadow */
+  --shadow-card: 0 1px 2px rgba(13, 27, 66, 0.04), 0 8px 24px rgba(13, 27, 66, 0.06);
+  --shadow-card-hover: 0 4px 10px rgba(13, 27, 66, 0.06), 0 16px 36px rgba(13, 27, 66, 0.1);
+  --shadow-button: 0 2px 8px rgba(239, 125, 31, 0.28);
+
+  /* Motion */
+  --transition-fast: 160ms ease;
+  --transition-base: 220ms ease;
+}

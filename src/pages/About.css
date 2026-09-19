@@ -1,0 +1,38 @@
+.our-story {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+}
+
+.our-story__body p {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+  color: var(--color-muted);
+  margin-bottom: 18px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.trusted-sectors {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.trusted-sectors__cta {
+  margin-top: 28px;
+}
+
+@media (max-width: 960px) {
+  .our-story,
+  .trusted-sectors {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

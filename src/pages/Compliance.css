@@ -1,0 +1,93 @@
+.statutory {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.statutory__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rates {
+  padding-block: 64px;
+}
+
+.rates__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.rates__badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-card);
+  padding: 20px 32px;
+  text-align: center;
+  min-width: 160px;
+}
+
+.rates__badge strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-orange);
+}
+
+.rates__badge span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-section__details {
+  margin-top: 24px;
+  font-style: normal;
+}
+
+.contact-section__details p {
+  margin-bottom: 14px;
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+.contact-section__details a:hover {
+  color: var(--color-orange);
+}
+
+@media (max-width: 960px) {
+  .statutory {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .statutory__icon {
+    width: 72px;
+    height: 72px;
+    font-size: 1.8rem;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

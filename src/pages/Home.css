@@ -1,0 +1,32 @@
+.accountability {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.accountability__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+
+@media (max-width: 960px) {
+  .accountability {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .accountability__media {
+    max-width: 480px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .accountability__stats {
+    grid-template-columns: 1fr;
+  }
+}

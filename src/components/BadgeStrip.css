@@ -1,0 +1,24 @@
+.badge-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge-strip li {
+  padding: 10px 20px;
+  border-radius: var(--radius-badge);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.badge-strip--light li {
+  background: var(--color-navy-tint);
+  color: var(--color-navy);
+}
+
+.badge-strip--navy li {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
