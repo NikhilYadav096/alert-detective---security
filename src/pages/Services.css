@@ -158,6 +158,10 @@
   gap: 22px;
 }
 
+.services-catalog-grid .service-card {
+  min-height: 380px;
+}
+
 .services-empty-state {
   text-align: center;
   padding: 64px 20px;

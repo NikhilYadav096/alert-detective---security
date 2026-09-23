@@ -12,7 +12,6 @@ export const homeServices = [
     title: 'Corporate Housekeeping',
     description: 'Reliable, site-ready teams for hygienic, high-performance corporate and industrial workplaces.',
     image: 'housekeeping',
-    division: 'Bahnewal & Co.',
     highlights: ['Mechanized Care', 'Shift Rosters', 'Deep Sanitation'],
   },
   {
@@ -20,7 +19,6 @@ export const homeServices = [
     title: 'Facility Maintenance & Tech Ops',
     description: 'On-site technical support for electrical, HVAC, and plumbing keeping facilities running smoothly.',
     image: 'maintenance',
-    division: 'Bahnewal & Co.',
     highlights: ['Certified ITI', 'Preventive Upkeep', 'SLA Response'],
   },
   {
@@ -28,7 +26,6 @@ export const homeServices = [
     title: 'Industrial & Skilled Workforce',
     description: 'Flexible contract workforce capacity matched to factory shifts, packaging, and logistics.',
     image: 'operations',
-    division: 'Bahnewal & Co.',
     highlights: ['Rapid Scaling', '100% PF & ESI', 'Shift Supervisors'],
   },
   {
@@ -36,7 +33,6 @@ export const homeServices = [
     title: 'Corporate Hospitality & Front Desk',
     description: 'Presentable, groomed front-desk executives, concierge, pantry boys, and conference room attendants.',
     image: 'hospitality',
-    division: 'Bahnewal & Co.',
     highlights: ['Groomed & Uniformed', 'Front Desk & Pantry', 'Corporate Protocol'],
   },
 ]
