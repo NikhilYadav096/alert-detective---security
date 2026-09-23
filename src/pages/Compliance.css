@@ -73,7 +73,146 @@
   color: var(--color-orange);
 }
 
+/* ISO 9001:2015 Certificate Showcase */
+.iso-section {
+  padding-top: 0;
+}
+
+.iso-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 48px;
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.iso-card__badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.iso-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-badge);
+  background: var(--color-orange-tint);
+  color: var(--color-orange-600);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.iso-card__specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 20px;
+  margin: 24px 0 32px;
+  padding: 22px;
+  background: var(--color-background);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.iso-card__spec {
+  display: flex;
+  flex-direction: column;
+}
+
+.iso-card__spec-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+.iso-card__spec-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.4;
+}
+
+.iso-card__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.iso-card__preview {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(13, 27, 66, 0.16);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.iso-preview-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.iso-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1 / 1.414;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 400ms ease;
+}
+
+.iso-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 66, 0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.iso-preview-link:hover .iso-preview-overlay {
+  opacity: 1;
+}
+
+.iso-preview-link:hover .iso-preview-img {
+  transform: scale(1.03);
+}
+
 @media (max-width: 960px) {
+  .iso-card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 36px;
+  }
+
+  .iso-card__specs {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .iso-card__preview {
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .statutory {
     grid-template-columns: 1fr;
     gap: 24px;

@@ -1,7 +1,14 @@
 .our-story {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.our-story__heading .section-heading {
+  font-size: clamp(2rem, 1.6rem + 1.8vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .our-story__body p {
@@ -11,28 +18,31 @@
   margin-bottom: 18px;
 }
 
-.tag-list {
+.our-story__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 20px;
 }
 
+/* ── Trusted sectors ─────────────────────────────────────────── */
 .trusted-sectors {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
+  gap: 64px;
   align-items: start;
 }
 
 .trusted-sectors__cta {
-  margin-top: 28px;
+  margin-top: 32px;
+  align-self: flex-start;
 }
 
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .our-story,
   .trusted-sectors {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 }

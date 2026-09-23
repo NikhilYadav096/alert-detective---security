@@ -14,7 +14,7 @@ export default function Industries() {
         title={<>Workforce support<br />for every operating<br />environment.</>}
         description="From controlled workplaces to demanding field sites, our teams arrive prepared for the realities of your sector."
         ctas={[{ label: 'Talk to our team', to: '/compliance' }]}
-        art="security"
+        art="facilities"
       />
 
       <section className="section section--surface">

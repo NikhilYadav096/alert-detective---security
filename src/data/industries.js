@@ -1,7 +1,7 @@
 export const environments = [
   {
     title: 'Corporate & Commercial',
-    description: 'Workplace operations, housekeeping and security.',
+    description: 'Workplace operations, housekeeping and facility support.',
     image: 'corporate',
   },
   {
@@ -11,7 +11,7 @@ export const environments = [
   },
   {
     title: 'Facilities & Sites',
-    description: 'Maintenance, housekeeping and security for demanding sites.',
+    description: 'Maintenance, housekeeping and support for demanding sites.',
     image: 'facilities',
   },
   {

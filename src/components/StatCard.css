@@ -1,24 +1,85 @@
 .stat-card {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 20px 22px;
+  gap: 6px;
+  padding: 24px 26px;
   border-radius: var(--radius-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Decorative top-left accent */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-amber), var(--color-amber-400));
+  border-radius: 0 0 3px 0;
 }
 
 .stat-card strong {
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-size: 2.6rem;
+  font-weight: 900;
   line-height: 1;
+  letter-spacing: -0.04em;
+  display: block;
+}
+
+/* Text values (non-numeric): amber pill badge treatment */
+.stat-card--text {
+  justify-content: center;
+}
+
+.stat-card--text strong {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  word-break: break-word;
+  /* Pill badge */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: var(--radius-badge);
+  background: var(--color-amber);
+  color: #fff;
+  box-shadow: 0 3px 10px var(--color-amber-glow);
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+
+.stat-card--light.stat-card--text strong {
+  background: var(--color-amber);
+  color: #fff;
+}
+
+.stat-card--navy.stat-card--text strong {
+  background: rgba(240, 124, 30, 0.85);
+  color: #fff;
 }
 
 .stat-card span {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
+/* ── Light variant ───────────────────────────────────────────── */
 .stat-card--light {
-  background: var(--color-navy-tint);
+  background: var(--color-navy-tint2);
+  border: 1px solid var(--color-border);
 }
 
 .stat-card--light strong {
@@ -29,9 +90,15 @@
   color: var(--color-muted);
 }
 
+.stat-card--light:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Navy/dark variant ───────────────────────────────────────── */
 .stat-card--navy {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
 }
 
 .stat-card--navy strong {
@@ -39,5 +106,25 @@
 }
 
 .stat-card--navy span {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-card--navy:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Entry animation */
+.stat-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms var(--ease-out-expo),
+    transform 600ms var(--ease-out-expo),
+    box-shadow var(--transition-slow);
+}
+
+.stat-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

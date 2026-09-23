@@ -1,57 +1,98 @@
 :root {
-  /* Color */
-  --color-navy: #0d1b42;
-  --color-navy-700: #14275a;
-  --color-navy-600: #1b3170;
-  --color-navy-tint: #eef1f8;
-  --color-orange: #ef7d1f;
-  --color-orange-600: #d96b12;
-  --color-orange-tint: #fdf0e3;
-  --color-background: #f5f6f9;
-  --color-surface: #ffffff;
-  --color-text: #101a33;
-  --color-muted: #5c6578;
-  --color-muted-light: #8992a3;
-  --color-border: #e3e6ee;
-  --color-border-dark: rgba(255, 255, 255, 0.14);
-  --color-success: #1e8a5f;
-  --color-error: #c53030;
+  /* ─── Color Palette ──────────────────────────────────────────── */
+  /* Navy/Slate — deep authority base */
+  --color-navy:       #0b1427;
+  --color-navy-700:   #102040;
+  --color-navy-600:   #162d52;
+  --color-navy-500:   #1e3f72;
+  --color-navy-tint:  #edf1f8;
+  --color-navy-tint2: #f1f4f9;
 
-  /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --fs-hero: clamp(2.1rem, 1.55rem + 2.4vw, 3.4rem);
-  --fs-h1: clamp(1.9rem, 1.5rem + 1.7vw, 2.75rem);
-  --fs-h2: clamp(1.55rem, 1.3rem + 1.1vw, 2.1rem);
-  --fs-h3: 1.25rem;
-  --fs-body-lg: 1.125rem;
-  --fs-body: 1rem;
-  --fs-small: 0.875rem;
-  --fs-eyebrow: 0.8rem;
-  --lh-tight: 1.15;
-  --lh-heading: 1.25;
-  --lh-body: 1.65;
+  /* Amber — single accent, locked site-wide */
+  --color-amber:      #e8720d;
+  --color-amber-600:  #d06208;
+  --color-amber-400:  #f09542;
+  --color-amber-glow: rgba(232, 114, 13, 0.28);
+  --color-amber-tint: #fdf0e0;
 
-  /* Spacing / layout */
-  --container-width: 1240px;
-  --container-padding: 24px;
-  --section-padding: 96px;
-  --section-padding-mobile: 56px;
-  --gap-sm: 12px;
-  --gap-md: 24px;
-  --gap-lg: 40px;
+  /* Backgrounds */
+  --color-background: #f3f5fa;
+  --color-surface:    #ffffff;
+  --color-surface-alt:#f8fafe;
 
-  /* Radius */
-  --radius-card: 14px;
+  /* Type */
+  --color-text:       #0b1427;
+  --color-ink:        #192540;
+  --color-muted:      #4a5770;
+  --color-muted-light:#8492a8;
+  --color-border:     #dde2ef;
+  --color-border-subtle: rgba(255, 255, 255, 0.10);
+
+  /* Status */
+  --color-success:    #148f68;
+  --color-error:      #c53030;
+
+  /* Glass helpers */
+  --glass-bg:         rgba(255, 255, 255, 0.06);
+  --glass-border:     rgba(255, 255, 255, 0.12);
+  --glass-blur:       18px;
+
+  /* ─── Typography ─────────────────────────────────────────────── */
+  --font-sans:    'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Display — for hero headline, large page titles */
+  --fs-display: clamp(3.4rem, 2rem + 5.5vw, 5.6rem);
+  --lh-display: 0.93;
+
+  /* Scale */
+  --fs-hero:   clamp(3rem, 2rem + 4vw, 5rem);
+  --fs-h1:     clamp(2.2rem, 1.6rem + 2.5vw, 3.4rem);
+  --fs-h2:     clamp(1.7rem, 1.3rem + 1.5vw, 2.4rem);
+  --fs-h3:     1.2rem;
+  --fs-body-lg:1.1rem;
+  --fs-body:   1rem;
+  --fs-small:  0.875rem;
+  --fs-eyebrow:0.72rem;
+
+  --lh-tight:   1.08;
+  --lh-heading: 1.18;
+  --lh-body:    1.68;
+
+  /* ─── Layout ─────────────────────────────────────────────────── */
+  --container-width:          1260px;
+  --container-padding:        24px;
+  --section-padding:          112px;
+  --section-padding-mobile:   64px;
+  --gap-sm:  12px;
+  --gap-md:  24px;
+  --gap-lg:  48px;
+
+  /* ─── Radius — one consistent scale ─────────────────────────── */
+  /* Rule: cards = 14px, buttons = 8px, inputs = 8px, badges = 999px */
+  --radius-card:   14px;
   --radius-button: 8px;
-  --radius-badge: 999px;
-  --radius-input: 8px;
+  --radius-badge:  999px;
+  --radius-input:  8px;
+  --radius-xl:     20px;
 
-  /* Shadow */
-  --shadow-card: 0 1px 2px rgba(13, 27, 66, 0.04), 0 8px 24px rgba(13, 27, 66, 0.06);
-  --shadow-card-hover: 0 4px 10px rgba(13, 27, 66, 0.06), 0 16px 36px rgba(13, 27, 66, 0.1);
-  --shadow-button: 0 2px 8px rgba(239, 125, 31, 0.28);
+  /* ─── Shadows — navy-tinted, no pure black ───────────────────── */
+  --shadow-xs:     0 1px 3px rgba(11, 20, 39, 0.06);
+  --shadow-card:   0 2px 4px rgba(11, 20, 39, 0.04),
+                   0 8px 24px rgba(11, 20, 39, 0.07);
+  --shadow-card-hover: 0 6px 16px rgba(11, 20, 39, 0.08),
+                       0 24px 48px rgba(11, 20, 39, 0.13);
+  --shadow-button: 0 3px 12px rgba(232, 114, 13, 0.36);
+  --shadow-button-hover: 0 5px 18px rgba(232, 114, 13, 0.48);
+  --shadow-header: 0 1px 0 rgba(11, 20, 39, 0.07),
+                   0 4px 20px rgba(11, 20, 39, 0.06);
+  --shadow-navy:   0 8px 32px rgba(11, 20, 39, 0.38);
 
-  /* Motion */
-  --transition-fast: 160ms ease;
-  --transition-base: 220ms ease;
+  /* ─── Motion ─────────────────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:   cubic-bezier(0.22, 1, 0.36, 1);
+
+  --transition-fast:   150ms ease;
+  --transition-base:   220ms ease;
+  --transition-slow:   400ms var(--ease-out-expo);
+  --transition-spring: 480ms var(--ease-spring);
 }

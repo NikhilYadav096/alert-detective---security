@@ -1,28 +1,74 @@
 .cta-band {
-  padding-block: 56px;
+  padding-block: 72px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ── Orange variant ──────────────────────────────────────────── */
 .cta-band--orange {
-  background: var(--color-orange);
+  background: linear-gradient(135deg, #d95e00 0%, var(--color-amber) 50%, #f9a255 100%);
   color: #fff;
 }
 
+/* Animated shimmer sweep */
+.cta-band--orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255,255,255,0.09) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: cta-shimmer 4s linear infinite;
+  pointer-events: none;
+}
+
+/* Diagonal line texture */
+.cta-band--orange::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 18px,
+    rgba(255,255,255,0.04) 18px,
+    rgba(255,255,255,0.04) 19px
+  );
+  pointer-events: none;
+}
+
+@keyframes cta-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Tint variant ────────────────────────────────────────────── */
 .cta-band--tint {
-  background: var(--color-navy-tint);
+  background: linear-gradient(135deg, var(--color-navy-tint2) 0%, #e8eef8 100%);
   color: var(--color-text);
 }
 
+/* ── Navy variant ────────────────────────────────────────────── */
 .cta-band--navy {
-  background: var(--color-navy);
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
   color: #fff;
 }
 
+/* ── Layout ──────────────────────────────────────────────────── */
 .cta-band__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 32px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-band--md .cta-band__inner {
@@ -31,14 +77,15 @@
 
 .cta-band__text h2 {
   font-size: var(--fs-h2);
-  font-weight: 700;
+  font-weight: 800;
   line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
 }
 
 .cta-band__text p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: var(--fs-body-lg);
-  opacity: 0.85;
+  opacity: 0.82;
   max-width: 520px;
 }
 
@@ -53,6 +100,21 @@
   margin-inline: auto;
 }
 
+/* ── Button overrides ────────────────────────────────────────── */
+/* White button on orange CTA */
+.cta-band--orange .btn-white {
+  background: #fff;
+  color: var(--color-amber-600);
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.cta-band--orange .btn-white:hover {
+  background: var(--color-navy);
+  color: #fff;
+  box-shadow: var(--shadow-navy);
+}
+
 @media (max-width: 640px) {
   .cta-band__inner {
     flex-direction: column;
@@ -62,5 +124,9 @@
   .cta-band .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .cta-band--center .cta-band__inner {
+    align-items: center;
   }
 }

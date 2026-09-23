@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { statesOfOperation } from '../data/industries'
 import './Footer.css'
 
@@ -6,12 +7,21 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__grid">
         <div className="site-footer__col">
-          <h2 className="site-footer__brand">Bahnewal &amp; Co.</h2>
+          <div className="site-footer__brand-wrap">
+            <img src="/images/logo.png" alt="Bahnewal & Co. Logo" className="site-footer__logo" />
+            <div>
+              <h2 className="site-footer__brand">Bahnewal &amp; Co.</h2>
+              <span className="site-footer__subbrand">Alert Detectives &amp; Security</span>
+            </div>
+          </div>
           <p>
             Operating with Alert Detectives &amp; Security Pvt. Ltd. — trusted workforce partners for
             more than four decades.
           </p>
           <p className="site-footer__strap">Maximum Service at Minimum Cost.</p>
+          <Link to="/about#founders-note" className="site-footer__founder-link">
+            Founder&rsquo;s Note &amp; Philosophy <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
 
         <div className="site-footer__col">
@@ -41,7 +51,7 @@ export default function Footer() {
 
       <div className="container site-footer__bottom">
         <p>© {new Date().getFullYear()} Bahnewal &amp; Co. All rights reserved.</p>
-        <p>GST · PF · ESIC · PAN compliant</p>
+        <p>ISO 9001:2015 certified · GST · PF · ESIC · PAN compliant</p>
       </div>
     </footer>
   )

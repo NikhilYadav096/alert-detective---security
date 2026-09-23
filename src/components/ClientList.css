@@ -1,16 +1,36 @@
 .client-list--card {
   background: var(--color-surface);
   color: var(--color-text);
-  border-radius: var(--radius-card);
-  padding: 32px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.18),
+    0 30px 60px rgba(0, 0, 0, 0.20);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent top border */
+.client-list--card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-amber), transparent);
 }
 
 .client-list--card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--color-navy);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
 }
 
 .client-list--card ul {
@@ -19,10 +39,33 @@
 }
 
 .client-list--card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 0;
   border-bottom: 1px solid var(--color-border);
-  font-size: 0.95rem;
-  color: var(--color-text);
+  font-size: 0.92rem;
+  color: var(--color-ink);
+  font-weight: 500;
+  transition: color var(--transition-fast), padding-left var(--transition-base);
+}
+
+.client-list--card li:hover {
+  color: var(--color-amber-600);
+  padding-left: 6px;
+}
+
+.client-list--card li::before {
+  content: '›';
+  color: var(--color-amber);
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+
+.client-list--card li:hover::before {
+  transform: translateX(3px);
 }
 
 .client-list--card li:last-child {
@@ -30,6 +73,7 @@
   padding-bottom: 0;
 }
 
+/* Pills variant (on dark backgrounds) */
 .client-list--pills ul {
   display: flex;
   flex-wrap: wrap;
@@ -39,9 +83,17 @@
 .client-list--pills li {
   padding: 9px 18px;
   border-radius: var(--radius-badge);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  cursor: default;
+}
+
+.client-list--pills li:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
 }

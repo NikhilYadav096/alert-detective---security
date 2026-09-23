@@ -1,42 +1,186 @@
+/* ── Photo Card — full-bleed image, structured overlay ──────── */
 .service-card {
-  background: var(--color-surface);
+  position: relative;
   border-radius: var(--radius-card);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--color-border);
-  height: 100%;
+  background: var(--color-navy);
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  justify-content: space-between;
+  min-height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(11, 20, 39, 0.25);
+  transition: transform 450ms var(--ease-out-expo), box-shadow 450ms var(--ease-out-expo), border-color 300ms ease;
 }
 
 .service-card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(11, 20, 39, 0.45);
+  border-color: rgba(255, 255, 255, 0.20);
 }
 
-.service-card__media {
-  border-radius: 0;
-  box-shadow: none;
+.service-card--clickable {
+  cursor: pointer;
+  outline: none;
 }
 
-.service-card__body {
-  padding: 22px 22px 26px;
+.service-card--clickable:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+/* ── Background image ─────────────────────────────────────────── */
+.service-card__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.service-card__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 700ms var(--ease-out-expo);
+}
+
+.service-card:hover .service-card__bg img {
+  transform: scale(1.05);
+}
+
+/* ── Dark gradient overlay ────────────────────────────────────── */
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 20, 39, 0.70) 0%,
+    rgba(11, 20, 39, 0.25) 30%,
+    rgba(11, 20, 39, 0.75) 60%,
+    rgba(11, 20, 39, 0.96) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Top badge/division tag ──────────────────────────────────── */
+.service-card__top {
+  position: relative;
+  z-index: 2;
+  padding: 18px 20px;
   display: flex;
-  flex-direction: column;
-  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.service-card__tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(11, 20, 39, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+
+/* ── Text body — bottom-aligned ──────────────────────────────── */
+.service-card__body {
+  position: relative;
+  padding: 20px 22px 24px;
+  z-index: 2;
+  margin-top: auto;
 }
 
 .service-card__body h3 {
-  font-size: var(--fs-h3);
-  font-weight: 700;
-  color: var(--color-navy);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
   margin-bottom: 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .service-card__body p {
-  font-size: 0.95rem;
-  line-height: var(--lh-body);
-  color: var(--color-muted);
-  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 0;
+}
+
+/* ── Highlight micro-tags ────────────────────────────────────── */
+.service-card__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.service-card__pill {
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Action affordance ────────────────────────────────────────── */
+.service-card__action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #ffa149;
+  letter-spacing: 0.02em;
+  transition: gap 200ms ease, color 200ms ease;
+}
+
+.service-card:hover .service-card__action {
+  gap: 10px;
+  color: #ffbc7e;
+}
+
+.service-card__arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.service-card:hover .service-card__arrow {
+  transform: translateX(3px);
+}
+
+/* ── Featured variant (for Home page bento grid) ─────────────── */
+.service-card--featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-amber);
+  z-index: 3;
+}
+
+.service-card--featured .service-card__body {
+  padding: 28px 32px 34px;
+}
+
+.service-card--featured .service-card__body h3 {
+  font-size: 1.35rem;
+}
+
+.service-card--featured .service-card__body p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.78);
 }

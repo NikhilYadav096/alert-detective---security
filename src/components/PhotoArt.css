@@ -5,6 +5,11 @@
   overflow: hidden;
   background: var(--color-navy);
   box-shadow: var(--shadow-card);
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+}
+
+.photo-art:hover {
+  box-shadow: var(--shadow-card-hover);
 }
 
 .photo-art img {
@@ -13,4 +18,9 @@
   display: block;
   object-fit: cover;
   object-position: center;
+  transition: transform 700ms var(--ease-out-expo);
+}
+
+.photo-art:hover img {
+  transform: scale(1.04);
 }

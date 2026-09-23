@@ -2,11 +2,10 @@ import HeroSplit from '../components/HeroSplit'
 import NumberedCard from '../components/NumberedCard'
 import CheckList from '../components/CheckList'
 import ClientList from '../components/ClientList'
+import FoundersNote from '../components/FoundersNote'
 import { Link } from 'react-router-dom'
 import { supportedOrganizations } from '../data/clients'
 import './About.css'
-
-const storyTags = ['Result-oriented', 'Specialized divisions', 'Integrity', 'Confidentiality']
 
 const approach = [
   {
@@ -42,15 +41,15 @@ export default function About() {
         art="team"
       />
 
+      {/* ── Story — NO eyebrow, headline-first ──── */}
       <section className="section section--surface">
         <div className="container our-story">
           <div className="our-story__heading" data-reveal>
-            <span className="eyebrow">Our story</span>
-            <h2 className="section-heading">Experience turned into dependable delivery</h2>
+            <h2 className="section-heading">Experience turned<br />into dependable delivery</h2>
           </div>
           <div className="our-story__body" data-reveal>
             <p>
-              Bahnewal & Co. and Alert Detectives &amp; Security Pvt. Ltd. bring 40+ years of expertise
+              Bahnewal &amp; Co. and Alert Detectives &amp; Security Pvt. Ltd. bring 40+ years of expertise
               managing skilled and unskilled manpower for complex, everyday operations.
             </p>
             <p>
@@ -58,20 +57,23 @@ export default function About() {
               supervision. We work with integrity and confidentiality, adapting teams to the realities of
               each site, sector and client.
             </p>
-            <ul className="tag-list">
-              {storyTags.map((tag) => (
-                <li key={tag} className="tag">{tag}</li>
-              ))}
-            </ul>
+            <div className="our-story__tags">
+              <span className="tag">Result-oriented</span>
+              <span className="tag">Specialized divisions</span>
+              <span className="tag">Integrity</span>
+              <span className="tag">Confidentiality</span>
+            </div>
           </div>
         </div>
       </section>
 
+      <FoundersNote />
+
+      {/* ── Approach — NO eyebrow ───────────────── */}
       <section className="section section--tint">
         <div className="container">
           <div className="section-header" data-reveal>
-            <span className="eyebrow">Our approach</span>
-            <h2 className="section-heading">Three disciplines. One reliable standard.</h2>
+            <h2 className="section-heading">Three disciplines.<br />One reliable standard.</h2>
             <p className="section-description">
               We make workforce delivery practical, transparent and compliant from day one.
             </p>
@@ -84,6 +86,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── Trusted sectors ─────────────────────── */}
       <section className="section section--navy">
         <div className="container trusted-sectors">
           <div className="trusted-sectors__content" data-reveal>

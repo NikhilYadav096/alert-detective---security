@@ -12,7 +12,7 @@ export default function HeroSplit({
   badge,
 }) {
   return (
-    <section className="hero-split section--navy">
+    <section className="hero-split">
       <div className="container hero-split__inner">
         <div className="hero-split__content" data-reveal>
           {eyebrow && <span className="eyebrow">{eyebrow}</span>}
@@ -50,6 +50,11 @@ export default function HeroSplit({
             </div>
           )}
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="hero-split__scroll" aria-hidden="true">
+        <span />
       </div>
     </section>
   )
