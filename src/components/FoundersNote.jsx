@@ -10,20 +10,20 @@ export default function FoundersNote() {
               <div className="founders-note__photo-frame">
                 <img
                   src="/images/founder.jpg"
-                  alt="Pardeep Bahnewal — Founder & Managing Director"
+                  alt="Pardeep Sharma — Founder & Managing Director"
                   className="founders-note__photo"
                   loading="lazy"
                 />
-                <div className="founders-note__photo-badge">
-                  <img src="/images/logo-shield.png" alt="Bahnewal & Co." className="founders-note__badge-icon" />
-                  <div className="founders-note__badge-text">
-                    <strong>40+ Years</strong>
-                    <span>Workforce Leadership</span>
-                  </div>
+              </div>
+              <div className="founders-note__photo-badge">
+                <img src="/images/logo-shield.png" alt="Bahnewal & Co." className="founders-note__badge-icon" />
+                <div className="founders-note__badge-text">
+                  <strong>40+ Years</strong>
+                  <span>Workforce Leadership</span>
                 </div>
               </div>
               <div className="founders-note__caption">
-                <h3 className="founders-note__name">Pardeep Bahnewal</h3>
+                <h3 className="founders-note__name">Pardeep Sharma</h3>
                 <span className="founders-note__role">Founder &amp; Managing Director</span>
                 <span className="founders-note__org">Bahnewal &amp; Co. · Alert Detectives &amp; Security</span>
                 <span className="founders-note__location">Rohtak, Haryana, India</span>

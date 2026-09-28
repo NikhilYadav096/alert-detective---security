@@ -76,7 +76,7 @@ export default function Home() {
       {/* ── 4. Full-bleed operations — image as layout element ── */}
       <section className="operations-scene">
         <div className="operations-scene__bg">
-          <img src="/images/operations.jpg" alt="Site supervisor briefing team at an industrial facility" loading="lazy" />
+          <img src="/images/operations.jpg" alt="Skilled industrial worker at heavy rolling machine in manufacturing facility" loading="lazy" />
         </div>
         <div className="container operations-scene__body">
           <div className="operations-scene__content" data-reveal>
