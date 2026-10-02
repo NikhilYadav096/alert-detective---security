@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom'
 import HeroSplit from '../components/HeroSplit'
 import SectionHeader from '../components/SectionHeader'
 import ServiceCard from '../components/ServiceCard'
+import IndustryCard from '../components/IndustryCard'
+import ClientList from '../components/ClientList'
+import ClientLogos from '../components/ClientLogos'
 import BadgeStrip from '../components/BadgeStrip'
 import CTASection from '../components/CTASection'
 import { allServices } from '../data/services'
 import { complianceBadges } from '../data/compliance'
+import { environments, sectors, notableClients, statesOfOperation } from '../data/industries'
 import './Services.css'
 
 export default function Services() {
@@ -34,7 +38,7 @@ export default function Services() {
   return (
     <>
       <HeroSplit
-        eyebrow="Services"
+        eyebrow="Services &amp; Industries"
         title={<>Workforce &amp; Facility<br />Operations That Deliver.</>}
         description="From specialized single-department deployments to integrated multi-site manpower programs, Bahnewal &amp; Co. delivers dependable people, active supervision, and 100% statutory compliance designed around your operating reality."
         ctas={[
@@ -263,10 +267,51 @@ export default function Services() {
         </div>
       )}
 
+      {/* ── Industry Environments ──────────────────────────────── */}
+      <section className="section section--tint" id="industries">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Where We Work"
+            title="Teams shaped around the environment"
+            description="Supervision, training and deployment aligned to each workplace — from controlled offices to demanding field sites."
+          />
+          <div className="grid grid-3">
+            {environments.map((env) => (
+              <IndustryCard key={env.title} {...env} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sector Coverage ────────────────────────────────────── */}
+      <section className="section section--surface">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Sector Coverage"
+            title="Ready for specialized workplaces"
+          />
+          <ul className="sector-grid">
+            {sectors.map((sector) => (
+              <li key={sector} data-reveal>{sector}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── Notable Clients — Logo Marquee ─────────────────────── */}
+      <ClientLogos />
+
+      {/* ── States of Operation ─────────────────────────────────── */}
+      <section className="section section--navy">
+        <div className="container" style={{ maxWidth: '520px', textAlign: 'center', margin: '0 auto' }} data-reveal>
+          <ClientList title="States of operation" clients={statesOfOperation} tone="card" />
+        </div>
+      </section>
+
       <CTASection
         tone="orange"
-        heading="Need a workforce plan built around your site?"
-        description="Share your location, roles and timeline. We'll take it from there."
+        heading="The operating environment changes. The discipline stays."
+        description="Share your location, roles and timeline. We'll build the right team for your site."
         cta={{ label: 'Contact Bahnewal & Co.', to: '/compliance' }}
       />
     </>

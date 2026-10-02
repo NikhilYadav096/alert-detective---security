@@ -200,13 +200,34 @@
 .site-footer__bottom {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
   padding-block: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   font-size: 0.8rem;
   position: relative;
   z-index: 1;
+}
+
+.site-footer__credit {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.site-footer__credit-link {
+  color: var(--color-amber);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(232, 114, 13, 0.4);
+  transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.site-footer__credit-link:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
 /* Gradient top border illusion */

@@ -1,6 +1,8 @@
 import HeroSplit from '../components/HeroSplit'
 import ServiceCard from '../components/ServiceCard'
 import CheckList from '../components/CheckList'
+import ClientLogos from '../components/ClientLogos'
+import Testimonials from '../components/Testimonials'
 import { homeServices } from '../data/services'
 import { Link } from 'react-router-dom'
 import './Home.css'
@@ -16,8 +18,8 @@ import './Home.css'
 
 const stats = [
   { value: '40+', label: 'Years active' },
-  { value: '6',   label: 'States served' },
-  { value: '100+', label: 'Client engagements' },
+  { value: '6', label: 'States served' },
+  { value: '50+', label: 'Client engagements' },
   { value: 'ISO 9001', label: 'Quality certified' },
 ]
 
@@ -40,7 +42,6 @@ export default function Home() {
           { label: 'Contact us', to: '/compliance', variant: 'secondary' },
         ]}
         art="hero"
-        badge={{ value: '40+', label: 'Years trusted' }}
       />
 
       {/* ── 2. Stats strip — dark horizontal, numbers only ── */}
@@ -91,7 +92,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. Typographic CTA — no color band, editorial ─── */}
+      {/* ── 5. Client Logos — "Worked With" section ──────────── */}
+      <ClientLogos />
+
+      {/* ── 6. Client Testimonials & Leadership Endorsements ── */}
+      <Testimonials />
+
+      {/* ── 7. Typographic CTA — no color band, editorial ─── */}
       <section className="home-cta section--surface">
         <div className="container home-cta__inner" data-reveal>
           <div className="home-cta__rule" />

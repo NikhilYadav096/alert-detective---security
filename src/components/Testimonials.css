@@ -1,0 +1,270 @@
+/* ═══════════════════════════════════════════════════════════════
+   TESTIMONIALS — Editorial Swiss Architecture (Anti-AI Design)
+   ═══════════════════════════════════════════════════════════════ */
+
+.tm-section {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 84px 96px;
+}
+
+/* ── Section Header ─────────────────────────────────────────── */
+.tm-header {
+  margin-bottom: 48px;
+}
+
+.tm-header__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tm-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-amber);
+}
+
+.tm-eyebrow-line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--color-amber);
+  opacity: 0.5;
+}
+
+.tm-header__cols {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.tm-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  max-width: 640px;
+  margin: 0;
+}
+
+.tm-sub {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  max-width: 420px;
+  margin: 0;
+}
+
+/* ── Architectural 3-Column Frame ────────────────────────────── */
+.tm-frame {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card, 8px);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(11, 20, 39, 0.03);
+}
+
+/* Individual Column */
+.tm-col {
+  padding: 40px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  transition: background-color 240ms ease;
+}
+
+.tm-col:last-child {
+  border-right: none;
+}
+
+/* Subtle top amber hairline indicator on hover */
+.tm-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-amber);
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.tm-col:hover {
+  background: rgba(248, 250, 254, 0.9);
+}
+
+.tm-col:hover::before {
+  opacity: 1;
+}
+
+/* ── Client Row (Logo + Meta) ────────────────────────────────── */
+.tm-client-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(221, 226, 239, 0.6);
+}
+
+.tm-logo-wrap {
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.tm-logo-img {
+  max-height: 40px;
+  max-width: 130px;
+  object-fit: contain;
+  object-position: left center;
+  filter: contrast(1.05);
+  transition: transform 220ms ease;
+}
+
+.tm-logo-img--dark {
+  background: #0b1427;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.tm-col:hover .tm-logo-img {
+  transform: scale(1.03);
+}
+
+.tm-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 3px;
+}
+
+.tm-sector {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-muted-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tm-tenure {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-amber-600);
+  background: rgba(232, 114, 13, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.01em;
+}
+
+/* ── The Quote ───────────────────────────────────────────────── */
+.tm-quote {
+  margin: 0 0 32px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.tm-quote p {
+  font-size: 1.12rem;
+  line-height: 1.68;
+  color: var(--color-navy);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  margin: 0;
+}
+
+/* ── Bottom Byline (Author) ──────────────────────────────────── */
+.tm-byline {
+  margin-top: auto;
+}
+
+.tm-byline__rule {
+  width: 24px;
+  height: 2px;
+  background: var(--color-amber);
+  margin-bottom: 14px;
+}
+
+.tm-byline__person {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tm-author {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.tm-designation {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.tm-company {
+  font-weight: 600;
+  color: var(--color-navy-600);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .tm-frame {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-col {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 32px 24px;
+  }
+
+  .tm-col:last-child {
+    border-bottom: none;
+  }
+
+  .tm-header__cols {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tm-section {
+    padding-block: 60px 72px;
+  }
+
+  .tm-quote p {
+    font-size: 1.02rem;
+  }
+
+  .tm-client-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tm-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

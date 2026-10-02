@@ -51,6 +51,17 @@ export default function Footer() {
 
       <div className="container site-footer__bottom">
         <p>© {new Date().getFullYear()} Bahnewal &amp; Co. All rights reserved.</p>
+        <p className="site-footer__credit">
+          Made and maintained by{' '}
+          <a
+            href="https://www.vaxalor.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="site-footer__credit-link"
+          >
+            Vaxalor
+          </a>
+        </p>
         <p>ISO 9001:2015 certified · GST · PF · ESIC · PAN compliant</p>
       </div>
     </footer>

@@ -127,3 +127,82 @@
     gap: 0;
   }
 }
+
+/* ── Service selection chips ─────────────────────────────────── */
+.contact-form__services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cf-service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-ink);
+  background: var(--color-background);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 200ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.cf-service-chip:hover {
+  border-color: var(--color-amber);
+  background: rgba(232, 114, 13, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 114, 13, 0.12);
+}
+
+/* Selected state */
+.cf-service-chip--selected {
+  background: var(--color-amber);
+  border-color: var(--color-amber);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(232, 114, 13, 0.35);
+  transform: translateY(-2px);
+}
+
+.cf-service-chip--selected:hover {
+  background: var(--color-amber-600, #c95e00);
+  border-color: var(--color-amber-600, #c95e00);
+  box-shadow: 0 6px 18px rgba(232, 114, 13, 0.45);
+}
+
+.cf-service-chip:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+.cf-service-chip__icon {
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* Tick mark for selected chips */
+.cf-service-chip--selected::after {
+  content: '✓';
+  font-size: 0.75em;
+  font-weight: 800;
+  margin-left: 2px;
+  opacity: 0.9;
+}
+
+@media (max-width: 560px) {
+  .cf-service-chip {
+    font-size: 0.78rem;
+    padding: 8px 13px;
+  }
+}

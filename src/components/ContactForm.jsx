@@ -4,10 +4,23 @@ import './ContactForm.css'
 
 const initialValues = { name: '', organization: '', phone: '', email: '', requirement: '' }
 
-function validate(values) {
+const SERVICE_OPTIONS = [
+  { id: 'housekeeping',    label: 'Corporate Housekeeping',         icon: '🧹' },
+  { id: 'maintenance',    label: 'Facility Maintenance & Tech Ops', icon: '🔧' },
+  { id: 'skilled',        label: 'Industrial & Skilled Workforce',  icon: '🏭' },
+  { id: 'hospitality',    label: 'Corporate Hospitality',          icon: '🏨' },
+  { id: 'horticulture',   label: 'Horticulture & Grounds',         icon: '🌿' },
+  { id: 'security',       label: 'Security Services',              icon: '🛡️' },
+  { id: 'events',         label: 'Events & Promotions',            icon: '🎪' },
+  { id: 'other',          label: 'Other / Multiple Services',      icon: '➕' },
+]
+
+function validate(values, selectedServices) {
   const errors = {}
   if (!values.name.trim()) errors.name = 'Please enter your name.'
   if (!values.organization.trim()) errors.organization = 'Please enter your organization.'
+
+  if (selectedServices.length === 0) errors.services = 'Please select at least one service.'
 
   if (!values.phone.trim()) {
     errors.phone = 'Please enter a phone number.'
@@ -28,27 +41,47 @@ function validate(values) {
 
 export default function ContactForm() {
   const [values, setValues] = useState(initialValues)
+  const [selectedServices, setSelectedServices] = useState([])
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (field) => (event) => {
     setValues((prev) => ({ ...prev, [field]: event.target.value }))
   }
 
+  const toggleService = (id) => {
+    setSelectedServices((prev) =>
+      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+    )
+    // Clear service error on interaction
+    setErrors((prev) => ({ ...prev, services: undefined }))
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const nextErrors = validate(values)
+    const nextErrors = validate(values, selectedServices)
     setErrors(nextErrors)
 
     if (Object.keys(nextErrors).length > 0) return
 
     setStatus('submitting')
+    setErrorMessage('')
+    const serviceLabels = SERVICE_OPTIONS
+      .filter((s) => selectedServices.includes(s.id))
+      .map((s) => s.label)
     try {
-      await submitEnquiry(values)
+      await submitEnquiry({ ...values, services: serviceLabels.join(', ') })
       setStatus('success')
       setValues(initialValues)
-    } catch {
+      setSelectedServices([])
+    } catch (err) {
       setStatus('error')
+      setErrorMessage(
+        err?.message?.toLowerCase().includes('activation')
+          ? "Form setup: Please check nikhil.vaxalor@gmail.com and click 'Activate Form' to start receiving enquiries."
+          : (err?.message || 'Something went wrong sending your enquiry. Please try again.')
+      )
     }
   }
 
@@ -125,7 +158,25 @@ export default function ContactForm() {
           {errors.email && <p className="contact-form__error" id="email-error">{errors.email}</p>}
         </div>
       </div>
-
+      {/* ── Service selection chips ────────────────────────── */}
+      <div className="contact-form__field">
+        <label>Services Required</label>
+        <div className="contact-form__services">
+          {SERVICE_OPTIONS.map((svc) => (
+            <button
+              key={svc.id}
+              type="button"
+              className={`cf-service-chip ${selectedServices.includes(svc.id) ? 'cf-service-chip--selected' : ''}`}
+              onClick={() => toggleService(svc.id)}
+              aria-pressed={selectedServices.includes(svc.id)}
+            >
+              <span className="cf-service-chip__icon" aria-hidden="true">{svc.icon}</span>
+              {svc.label}
+            </button>
+          ))}
+        </div>
+        {errors.services && <p className="contact-form__error" role="alert">{errors.services}</p>}
+      </div>
       <div className="contact-form__field">
         <label htmlFor="requirement">Requirement</label>
         <textarea
@@ -142,7 +193,7 @@ export default function ContactForm() {
 
       {status === 'error' && (
         <p className="contact-form__error contact-form__error--top" role="alert">
-          Something went wrong sending your enquiry. Please try again.
+          {errorMessage || 'Something went wrong sending your enquiry. Please try again.'}
         </p>
       )}
 

@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
-import Industries from './pages/Industries'
 import Compliance from './pages/Compliance'
 
 function useScrollToTop(pathname) {
@@ -56,7 +55,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries" element={<Navigate to="/services#industries" replace />} />
           <Route path="/compliance" element={<Compliance />} />
           <Route path="/contact" element={<Compliance />} />
         </Routes>
