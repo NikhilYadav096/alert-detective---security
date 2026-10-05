@@ -58,7 +58,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        <NavLink to="/compliance" className="btn btn-primary site-header__cta">
+        <NavLink to="/contact" className="btn btn-primary site-header__cta">
           Talk to our team <span aria-hidden="true">→</span>
         </NavLink>
 
@@ -88,7 +88,7 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <NavLink to="/compliance" className="btn btn-primary btn-block" onClick={() => setOpen(false)}>
+        <NavLink to="/contact" className="btn btn-primary btn-block" onClick={() => setOpen(false)}>
           Talk to our team <span aria-hidden="true">→</span>
         </NavLink>
       </div>

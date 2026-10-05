@@ -22,7 +22,7 @@ export default function NotFound() {
           <Link to="/" className="btn btn-primary">
             Back to home <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/compliance" className="btn btn-secondary">
+          <Link to="/contact" className="btn btn-secondary">
             Talk to our team
           </Link>
         </div>

@@ -46,7 +46,7 @@ export default function Home() {
         description="End-to-end manpower solutions for government, public sector and private organizations — delivered with accountability since 1980."
         ctas={[
           { label: 'Explore services', to: '/services' },
-          { label: 'Contact us', to: '/compliance', variant: 'secondary' },
+          { label: 'Contact us', to: '/contact', variant: 'secondary' },
         ]}
         art="hero"
       />
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="container home-cta__inner" data-reveal>
           <div className="home-cta__rule" />
           <h2 className="home-cta__heading">Let's put the right team<br />behind your operation.</h2>
-          <Link to="/compliance" className="btn btn-primary">
+          <Link to="/contact" className="btn btn-primary">
             Speak with our team →
           </Link>
           <p className="home-cta__note">Bahnewal &amp; Co. · Rohtak, Haryana · Est. 1980</p>

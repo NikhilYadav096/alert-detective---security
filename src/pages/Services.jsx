@@ -49,7 +49,7 @@ export default function Services() {
         title={<>Workforce &amp; Facility<br />Operations That Deliver.</>}
         description="From specialized single-department deployments to integrated multi-site manpower programs, Bahnewal &amp; Co. delivers dependable people, active supervision, and 100% statutory compliance designed around your operating reality."
         ctas={[
-          { label: 'Plan your workforce', to: '/compliance' },
+          { label: 'Plan your workforce', to: '/contact' },
           { label: 'View all services', to: '#services-directory', variant: 'secondary' },
         ]}
         art="corporate"
@@ -256,7 +256,7 @@ export default function Services() {
 
             <div className="service-modal__footer">
               <Link
-                to="/compliance"
+                to="/contact"
                 className="btn btn-primary"
                 onClick={() => setActiveModalService(null)}
               >
@@ -319,7 +319,7 @@ export default function Services() {
         tone="orange"
         heading="The operating environment changes. The discipline stays."
         description="Share your location, roles and timeline. We'll build the right team for your site."
-        cta={{ label: 'Contact Bahnewal & Co.', to: '/compliance' }}
+        cta={{ label: 'Contact Bahnewal & Co.', to: '/contact' }}
       />
     </>
   )

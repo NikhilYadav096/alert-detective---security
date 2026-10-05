@@ -51,28 +51,6 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
-.contact-section {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
-  align-items: start;
-}
-
-.contact-section__details {
-  margin-top: 24px;
-  font-style: normal;
-}
-
-.contact-section__details p {
-  margin-bottom: 14px;
-  line-height: var(--lh-body);
-  color: var(--color-text);
-}
-
-.contact-section__details a:hover {
-  color: var(--color-orange);
-}
-
 /* ISO 9001:2015 Certificate Showcase */
 .iso-section {
   padding-top: 0;
@@ -223,10 +201,5 @@
     width: 72px;
     height: 72px;
     font-size: 1.8rem;
-  }
-
-  .contact-section {
-    grid-template-columns: 1fr;
-    gap: 36px;
   }
 }

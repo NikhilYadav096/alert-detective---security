@@ -104,7 +104,7 @@ export default function About() {
               private organizations across industry, education, hospitality, banking and exports.
             </p>
             <CheckList items={sectorPoints} />
-            <Link to="/compliance" className="btn btn-primary trusted-sectors__cta">
+            <Link to="/contact" className="btn btn-primary trusted-sectors__cta">
               Discuss your requirements <span aria-hidden="true">→</span>
             </Link>
           </div>

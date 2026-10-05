@@ -1,0 +1,200 @@
+/* ── Warm hero — light, not navy, deliberately different from the rest
+   of the site's dark heroes to signal "this page is the human one" ── */
+.talk-hero {
+  background: linear-gradient(160deg, var(--color-amber-tint) 0%, var(--color-navy-tint2) 60%);
+  padding-block: 88px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.talk-hero__inner {
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+
+.talk-hero h1 {
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  line-height: var(--lh-tight);
+  margin: 10px 0 18px;
+}
+
+.talk-hero p {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  max-width: 54ch;
+}
+
+/* ── Body grid ─────────────────────────────────────────────────── */
+.talk-body {
+  padding-top: 64px;
+}
+
+.talk-body__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.talk-body__side {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: sticky;
+  top: 100px;
+}
+
+/* ── Person card — the humanizing centerpiece ─────────────────── */
+.talk-person-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.talk-person-card img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  flex-shrink: 0;
+  border: 3px solid var(--color-amber-tint);
+}
+
+.talk-person-card__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.talk-person-card__quote {
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.talk-person-card__text strong {
+  font-size: 0.92rem;
+  color: var(--color-navy);
+}
+
+.talk-person-card__text span {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ── Steps — "what happens next" ─────────────────────────────── */
+.talk-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: var(--color-navy-tint2);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.talk-steps li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.talk-steps__num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-amber);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.talk-steps li strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-navy);
+  margin-bottom: 3px;
+}
+
+.talk-steps li p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* ── Direct contact card ─────────────────────────────────────── */
+.talk-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 24px;
+  border-radius: var(--radius-xl);
+  border: 1px dashed rgba(181, 84, 12, 0.35);
+  background: var(--color-amber-tint);
+}
+
+.talk-direct__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-amber);
+  margin-bottom: 4px;
+}
+
+.talk-direct__link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  width: fit-content;
+}
+
+.talk-direct__link:hover {
+  color: var(--color-amber);
+}
+
+.talk-direct__address {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .talk-body__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .talk-body__side {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .talk-hero {
+    padding-block: 56px 40px;
+  }
+
+  .talk-person-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

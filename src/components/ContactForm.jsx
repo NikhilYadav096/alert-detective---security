@@ -39,7 +39,7 @@ function validate(values, selectedServices) {
   return errors
 }
 
-export default function ContactForm() {
+export default function ContactForm({ heading = 'Your workforce requirement' }) {
   const [values, setValues] = useState(initialValues)
   const [selectedServices, setSelectedServices] = useState([])
   const [errors, setErrors] = useState({})
@@ -121,7 +121,7 @@ export default function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
-      <h3>Your workforce requirement</h3>
+      <h3>{heading}</h3>
 
       {/* Honeypot — hidden from real users, invisible to screen readers,
           but present in the DOM for bots that auto-fill every field. */}

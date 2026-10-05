@@ -2,7 +2,7 @@ import HeroSplit from '../components/HeroSplit'
 import SectionHeader from '../components/SectionHeader'
 import ComplianceCard from '../components/ComplianceCard'
 import CheckList from '../components/CheckList'
-import ContactForm from '../components/ContactForm'
+import CTASection from '../components/CTASection'
 import useDocumentMeta from '../hooks/useDocumentMeta'
 import { complianceCards } from '../data/compliance'
 import './Compliance.css'
@@ -11,15 +11,15 @@ const statutoryPoints = ['Minimum wages', 'PF and ESI administration', 'Weekly o
 
 export default function Compliance() {
   useDocumentMeta({
-    title: 'Compliance & Contact',
-    description: 'ISO 9001:2015 certified, PF/ESI compliant workforce delivery. Get in touch with the Bahnewal & Co. Rohtak team to discuss your requirement.',
+    title: 'Compliance',
+    description: 'ISO 9001:2015 certified, PF/ESI compliant workforce delivery, backed by clear statutory practices and accountable management.',
     path: '/compliance',
   })
 
   return (
     <>
       <HeroSplit
-        eyebrow="Compliance & Contact"
+        eyebrow="Compliance"
         title={<>Reliable people.<br />Responsible<br />operations.</>}
         description="Workforce delivery backed by clear statutory practices, complete documentation and accountable management."
         art="contact"
@@ -161,37 +161,12 @@ export default function Compliance() {
         </div>
       </section>
 
-      <section className="section section--tint">
-        <div className="container contact-section">
-          <div className="contact-section__info" data-reveal>
-            <span className="eyebrow">Contact us</span>
-            <h2 className="section-heading">Let&rsquo;s discuss your requirement.</h2>
-            <p className="section-description">
-              Tell us the roles, site, shifts and timeline. Our Rohtak team will help shape the right plan.
-            </p>
-            <address className="contact-section__details">
-              <p>
-                B 18/629 Railway Road
-                <br />
-                Rohtak, Haryana, India
-              </p>
-              <p>
-                <a href="tel:+917988135326">+91-7988135326</a>
-                <br />
-                <a href="tel:+919812045312">+91-9812045312</a>
-              </p>
-              <p>
-                <a href="mailto:adsmanpower@gmail.com">adsmanpower@gmail.com</a>
-                <br />
-                <a href="mailto:pardeep_ads@yahoo.com">pardeep_ads@yahoo.com</a>
-              </p>
-            </address>
-          </div>
-          <div data-reveal>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      <CTASection
+        tone="orange"
+        heading="Let's discuss your requirement."
+        description="Tell us the roles, site, shifts and timeline — our Rohtak team will help shape the right plan."
+        cta={{ label: 'Talk to our team', to: '/contact' }}
+      />
     </>
   )
 }

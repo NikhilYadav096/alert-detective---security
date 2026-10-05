@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Compliance from './pages/Compliance'
+import TalkToUs from './pages/TalkToUs'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import Terms from './pages/Terms'
 import NotFound from './pages/NotFound'
@@ -68,7 +69,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/industries" element={<Navigate to="/services#industries" replace />} />
           <Route path="/compliance" element={<Compliance />} />
-          <Route path="/contact" element={<Compliance />} />
+          <Route path="/contact" element={<TalkToUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
