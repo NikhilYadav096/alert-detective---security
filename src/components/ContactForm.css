@@ -8,6 +8,18 @@
   overflow: hidden;
 }
 
+/* Honeypot — present for bots, invisible and unreachable for real users
+   and keyboard/screen-reader navigation (off-screen, not display:none,
+   since some bots skip display:none fields). */
+.contact-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* Top accent line */
 .contact-form::before {
   content: '';

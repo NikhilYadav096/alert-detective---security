@@ -8,6 +8,7 @@ import ClientList from '../components/ClientList'
 import ClientLogos from '../components/ClientLogos'
 import BadgeStrip from '../components/BadgeStrip'
 import CTASection from '../components/CTASection'
+import useDocumentMeta from '../hooks/useDocumentMeta'
 import { allServices } from '../data/services'
 import { complianceBadges } from '../data/compliance'
 import { environments, sectors, notableClients, statesOfOperation } from '../data/industries'
@@ -15,6 +16,12 @@ import './Services.css'
 
 export default function Services() {
   const [activeModalService, setActiveModalService] = useState(null)
+
+  useDocumentMeta({
+    title: 'Services & Industries',
+    description: 'Facility management, industrial workforce, technical operations and corporate support — deployed with active supervision and 100% statutory compliance.',
+    path: '/services',
+  })
 
   // Close modal on Escape key
   useEffect(() => {
@@ -43,7 +50,7 @@ export default function Services() {
         description="From specialized single-department deployments to integrated multi-site manpower programs, Bahnewal &amp; Co. delivers dependable people, active supervision, and 100% statutory compliance designed around your operating reality."
         ctas={[
           { label: 'Plan your workforce', to: '/compliance' },
-          { label: 'View all services', to: '#services-directory' },
+          { label: 'View all services', to: '#services-directory', variant: 'secondary' },
         ]}
         art="corporate"
       />

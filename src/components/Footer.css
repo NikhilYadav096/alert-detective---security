@@ -210,6 +210,30 @@
   z-index: 1;
 }
 
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.site-footer__legal a,
+.site-footer__legal-btn {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__legal a:hover,
+.site-footer__legal-btn:hover {
+  color: var(--color-amber);
+}
+
 .site-footer__credit {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 500;

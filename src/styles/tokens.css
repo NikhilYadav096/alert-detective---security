@@ -8,10 +8,14 @@
   --color-navy-tint:  #edf1f8;
   --color-navy-tint2: #f1f4f9;
 
-  /* Amber — single accent, locked site-wide */
-  --color-amber:      #e8720d;
-  --color-amber-600:  #d06208;
-  --color-amber-400:  #f09542;
+  /* Amber — single accent, locked site-wide.
+     --color-amber is darkened from the original #e8720d (3.07:1 on white,
+     fails WCAG AA) to #b5540c (4.9:1) so button/eyebrow/link text passes
+     AA. --color-amber-400 keeps the original bright shade for decorative,
+     non-text use (icon fills, illustration accents, gradients). */
+  --color-amber:      #b5540c;
+  --color-amber-600:  #9c4709;
+  --color-amber-400:  #e8720d;
   --color-amber-glow: rgba(232, 114, 13, 0.28);
   --color-amber-tint: #fdf0e0;
 

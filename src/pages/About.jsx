@@ -3,6 +3,7 @@ import NumberedCard from '../components/NumberedCard'
 import CheckList from '../components/CheckList'
 import ClientList from '../components/ClientList'
 import FoundersNote from '../components/FoundersNote'
+import useDocumentMeta from '../hooks/useDocumentMeta'
 import { Link } from 'react-router-dom'
 import { supportedOrganizations } from '../data/clients'
 import './About.css'
@@ -32,6 +33,12 @@ const sectorPoints = [
 ]
 
 export default function About() {
+  useDocumentMeta({
+    title: 'About Us',
+    description: 'Bahnewal & Co. brings 40+ years of experience managing skilled and unskilled manpower with integrity, confidentiality and statutory compliance.',
+    path: '/about',
+  })
+
   return (
     <>
       <HeroSplit

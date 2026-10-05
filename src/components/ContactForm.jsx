@@ -45,6 +45,8 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [errorMessage, setErrorMessage] = useState('')
+  const [honeypot, setHoneypot] = useState('')
+  const mountedAt = useState(() => Date.now())[0]
 
   const handleChange = (field) => (event) => {
     setValues((prev) => ({ ...prev, [field]: event.target.value }))
@@ -60,6 +62,26 @@ export default function ContactForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
+    // Honeypot: a real visitor never fills this hidden field. Bots that
+    // blindly fill every input will — so silently treat it as "sent"
+    // without ever hitting the network, no error shown to tip them off.
+    if (honeypot.trim()) {
+      setStatus('success')
+      setValues(initialValues)
+      setSelectedServices([])
+      return
+    }
+
+    // Time-trap: a form filled and submitted in under 2 seconds is almost
+    // certainly a scripted bot, not a human reading the fields.
+    if (Date.now() - mountedAt < 2000) {
+      setStatus('success')
+      setValues(initialValues)
+      setSelectedServices([])
+      return
+    }
+
     const nextErrors = validate(values, selectedServices)
     setErrors(nextErrors)
 
@@ -100,6 +122,21 @@ export default function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
       <h3>Your workforce requirement</h3>
+
+      {/* Honeypot — hidden from real users, invisible to screen readers,
+          but present in the DOM for bots that auto-fill every field. */}
+      <div className="contact-form__honeypot" aria-hidden="true">
+        <label htmlFor="company_website">Website</label>
+        <input
+          id="company_website"
+          name="company_website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
 
       <div className="contact-form__field">
         <label htmlFor="name">Name</label>

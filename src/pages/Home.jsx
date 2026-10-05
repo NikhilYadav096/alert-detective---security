@@ -3,6 +3,7 @@ import ServiceCard from '../components/ServiceCard'
 import CheckList from '../components/CheckList'
 import ClientLogos from '../components/ClientLogos'
 import Testimonials from '../components/Testimonials'
+import useDocumentMeta from '../hooks/useDocumentMeta'
 import { homeServices } from '../data/services'
 import { Link } from 'react-router-dom'
 import './Home.css'
@@ -31,6 +32,12 @@ const accountabilityPoints = [
 ]
 
 export default function Home() {
+  useDocumentMeta({
+    title: 'Manpower & Workforce Solutions',
+    description: 'End-to-end manpower solutions for government, public sector and private organizations across six states. 40+ years of experience, ISO 9001:2015 certified, PF/ESI compliant.',
+    path: '/',
+  })
+
   return (
     <>
       {/* ── 1. Hero ─────────────────────────────────────────── */}

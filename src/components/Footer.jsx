@@ -51,6 +51,17 @@ export default function Footer() {
 
       <div className="container site-footer__bottom">
         <p>© {new Date().getFullYear()} Bahnewal &amp; Co. All rights reserved.</p>
+        <nav className="site-footer__legal" aria-label="Legal">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms">Terms &amp; Conditions</Link>
+          <button
+            type="button"
+            className="site-footer__legal-btn"
+            onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+          >
+            Cookie Settings
+          </button>
+        </nav>
         <p className="site-footer__credit">
           Made and maintained by{' '}
           <a

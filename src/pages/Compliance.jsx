@@ -3,12 +3,19 @@ import SectionHeader from '../components/SectionHeader'
 import ComplianceCard from '../components/ComplianceCard'
 import CheckList from '../components/CheckList'
 import ContactForm from '../components/ContactForm'
+import useDocumentMeta from '../hooks/useDocumentMeta'
 import { complianceCards } from '../data/compliance'
 import './Compliance.css'
 
 const statutoryPoints = ['Minimum wages', 'PF and ESI administration', 'Weekly offs', 'Leaves and holidays']
 
 export default function Compliance() {
+  useDocumentMeta({
+    title: 'Compliance & Contact',
+    description: 'ISO 9001:2015 certified, PF/ESI compliant workforce delivery. Get in touch with the Bahnewal & Co. Rohtak team to discuss your requirement.',
+    path: '/compliance',
+  })
+
   return (
     <>
       <HeroSplit
