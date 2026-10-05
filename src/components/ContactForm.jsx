@@ -79,7 +79,7 @@ export default function ContactForm() {
       setStatus('error')
       setErrorMessage(
         err?.message?.toLowerCase().includes('activation')
-          ? "Form setup: Please check nikhil.vaxalor@gmail.com and click 'Activate Form' to start receiving enquiries."
+          ? "Form setup: Please check bcortk5@gmail.com and click 'Activate Form' to start receiving enquiries."
           : (err?.message || 'Something went wrong sending your enquiry. Please try again.')
       )
     }

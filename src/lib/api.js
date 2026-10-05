@@ -1,4 +1,4 @@
-const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/nikhil.vaxalor@gmail.com'
+const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/bcortk5@gmail.com'
 
 export async function submitEnquiry(payload) {
   const response = await fetch(FORMSUBMIT_URL, {
