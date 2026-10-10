@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react'
+import { useEffect } from 'react'
 
 function setMetaByName(name, content) {
   let tag = document.querySelector(`meta[name="${name}"]`)
