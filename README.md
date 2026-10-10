@@ -19,14 +19,10 @@ npm run preview  # preview the production build locally
 
 ## Before going live — things to update
 
-A few things were implemented with a **placeholder production domain**
-(`https://bahnewalco.vercel.app`) since the site isn't deployed yet. Once you
-have a real domain, update it in all of these places:
-
-- `index.html` — canonical link, Open Graph/Twitter meta tags
-- `public/robots.txt` — `Sitemap:` line
-- `public/sitemap.xml` — every `<loc>` entry
-- `src/hooks/useDocumentMeta.js` — `SITE_ORIGIN` constant
+The production domain is `https://www.bahnewalco.in` — already wired into
+`index.html` (canonical + OG/Twitter tags), `public/robots.txt`, `public/sitemap.xml`
+and `src/hooks/useDocumentMeta.js` (`SITE_ORIGIN`). If the domain ever changes,
+update it in those same four places.
 
 Other things worth doing before launch:
 

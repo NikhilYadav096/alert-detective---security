@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+﻿import { useEffect } from 'react'
 
 function setMetaByName(name, content) {
   let tag = document.querySelector(`meta[name="${name}"]`)
@@ -31,7 +31,7 @@ function setCanonical(href) {
 }
 
 const SITE_NAME = 'Bahnewal & Co.'
-const SITE_ORIGIN = 'https://bahnewalco.vercel.app'
+const SITE_ORIGIN = 'https://www.bahnewalco.in'
 
 // Updates document.title and the key meta/OG tags for the active route.
 // Note: this only affects the live DOM after JS runs. Crawlers that don't
